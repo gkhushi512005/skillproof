@@ -1,0 +1,126 @@
+/* Location: src/app/globals.css */
+/* Action: Replace entire file with enhanced contrast tokens */
+
+@import "tailwindcss";
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-success: hsl(var(--success));
+  --color-success-foreground: hsl(var(--success-foreground));
+
+  --color-warning: hsl(var(--warning));
+  --color-warning-foreground: hsl(var(--warning-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+  /* Crisp, high-contrast Executive Light Theme */
+  --background: 210 40% 98%;
+  --foreground: 222 47% 8%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 8%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 8%;
+
+  --primary: 221 83% 48%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 210 30% 94%;
+  --secondary-foreground: 222 47% 11%;
+
+  /* Stronger muted text for improved readability */
+  --muted: 210 25% 93%;
+  --muted-foreground: 215 28% 22%;
+
+  --accent: 210 30% 94%;
+  --accent-foreground: 222 47% 11%;
+
+  --destructive: 0 75% 42%;
+  --destructive-foreground: 0 0% 100%;
+
+  --success: 142 76% 28%;
+  --success-foreground: 0 0% 100%;
+
+  --warning: 38 92% 38%;
+  --warning-foreground: 222 47% 11%;
+
+  --border: 214 25% 82%;
+  --input: 214 25% 82%;
+  --ring: 221 83% 48%;
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 224 71% 4%;
+  --foreground: 213 31% 96%;
+
+  --card: 224 71% 6%;
+  --card-foreground: 213 31% 96%;
+
+  --popover: 224 71% 6%;
+  --popover-foreground: 213 31% 96%;
+
+  --primary: 217 91% 65%;
+  --primary-foreground: 222 47% 8%;
+
+  --secondary: 215 28% 17%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 215 28% 17%;
+  --muted-foreground: 217 20% 82%;
+
+  --accent: 215 28% 17%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 65% 55%;
+  --destructive-foreground: 210 40% 98%;
+
+  --success: 142 71% 48%;
+  --success-foreground: 222 47% 8%;
+
+  --warning: 38 92% 58%;
+  --warning-foreground: 222 47% 8%;
+
+  --border: 216 34% 30%;
+  --input: 216 34% 30%;
+  --ring: 217 91% 65%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
