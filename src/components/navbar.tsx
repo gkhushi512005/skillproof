@@ -15,46 +15,57 @@ export function Navbar() {
 
   useEffect(() => {
     setIsClient(true);
-    const supabase = createClient();
+    let subscription: { unsubscribe: () => void } | null = null;
 
-    // Check initial session
-    const fetchUser = async () => {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (user) {
-        // Query profile for role & full name
-        const { data: profile } = await supabase
-          .from("profiles")
-          .select("role, full_name")
-          .eq("id", user.id)
-          .single();
+    try {
+      const supabase = createClient();
 
-        setUser({
-          email: user.email,
-          role: profile?.role || (user.user_metadata?.role as string) || "candidate",
-          fullName: profile?.full_name || (user.user_metadata?.full_name as string) || "User",
-        });
-      } else {
-        setUser(null);
-      }
-    };
+      // Check initial session
+      const fetchUser = async () => {
+        try {
+          const { data: { user } } = await supabase.auth.getUser();
+          if (user) {
+            // Query profile for role & full name
+            const { data: profile } = await supabase
+              .from("profiles")
+              .select("role, full_name")
+              .eq("id", user.id)
+              .single();
 
-    fetchUser();
+            setUser({
+              email: user.email,
+              role: profile?.role || (user.user_metadata?.role as string) || "candidate",
+              fullName: profile?.full_name || (user.user_metadata?.full_name as string) || "User",
+            });
+          } else {
+            setUser(null);
+          }
+        } catch (e) {
+          console.warn("Navbar auth fetch failed:", e);
+        }
+      };
 
-    // Listen for auth state changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (session?.user) {
-        setUser({
-          email: session.user.email,
-          role: (session.user.user_metadata?.role as string) || "candidate",
-          fullName: (session.user.user_metadata?.full_name as string) || "User",
-        });
-      } else {
-        setUser(null);
-      }
-    });
+      fetchUser();
+
+      // Listen for auth state changes
+      const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+        if (session?.user) {
+          setUser({
+            email: session.user.email,
+            role: (session.user.user_metadata?.role as string) || "candidate",
+            fullName: (session.user.user_metadata?.full_name as string) || "User",
+          });
+        } else {
+          setUser(null);
+        }
+      });
+      subscription = data.subscription;
+    } catch (e) {
+      console.warn("Navbar Supabase init error:", e);
+    }
 
     return () => {
-      subscription.unsubscribe();
+      subscription?.unsubscribe();
     };
   }, []);
 

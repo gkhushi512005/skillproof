@@ -5,12 +5,10 @@ import { createBrowserClient } from "@supabase/ssr";
  * Handles reactive auth state and cookie persistence automatically.
  */
 export function createClient() {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-
-  if (!supabaseUrl || !supabaseAnonKey) {
-    console.warn("Supabase credentials missing. Check your .env.local file.");
-  }
+  const supabaseUrl =
+    process.env.NEXT_PUBLIC_SUPABASE_URL || "https://gfutfamtbajaevglnykt.supabase.co";
+  const supabaseAnonKey =
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "sb_publishable_mkPcmOxApujDU84SnKgg2Q_yUl_9Rga";
 
   return createBrowserClient(supabaseUrl, supabaseAnonKey);
 }
