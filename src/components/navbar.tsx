@@ -72,30 +72,30 @@ export function Navbar() {
   const dashboardHref = user?.role === "evaluator" ? "/evaluator" : "/dashboard";
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-2xs">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur shadow-xs">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2.5 transition-opacity hover:opacity-90">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-white shadow-xs">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 text-white shadow-xs">
             <ShieldCheck className="h-5 w-5" />
           </div>
           <div className="flex flex-col">
-            <span className="text-base font-black tracking-tight text-foreground">SkillProof</span>
-            <span className="text-[10px] font-extrabold tracking-wide text-slate-600 dark:text-slate-400 uppercase">
+            <span className="text-base font-black tracking-tight text-slate-950">SkillProof</span>
+            <span className="text-[10px] font-extrabold tracking-wide text-blue-700 uppercase">
               Verified Skills Passport
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-bold text-slate-800 dark:text-slate-200">
-          <Link href="/assessments" className="transition-colors hover:text-primary">
+        <nav className="hidden md:flex items-center gap-8 text-sm font-extrabold text-slate-900">
+          <Link href="/assessments" className="transition-colors hover:text-blue-600">
             Assessment Catalogue
           </Link>
-          <Link href="/how-it-works" className="transition-colors hover:text-primary">
+          <Link href="/how-it-works" className="transition-colors hover:text-blue-600">
             How It Works
           </Link>
-          <Link href="/verify/demo" className="transition-colors hover:text-primary">
+          <Link href="/verify/demo" className="transition-colors hover:text-blue-600">
             Verify a Credential
           </Link>
         </nav>
@@ -110,14 +110,14 @@ export function Navbar() {
                     <Award className="h-3.5 w-3.5" /> Evaluator
                   </span>
                 ) : (
-                  <span className="flex items-center gap-1 text-primary">
+                  <span className="flex items-center gap-1 text-blue-700">
                     <User className="h-3.5 w-3.5" /> Candidate
                   </span>
                 )}
               </Badge>
 
               <Link href={dashboardHref}>
-                <Button size="sm" className="font-bold text-xs">
+                <Button size="sm" className="font-bold text-xs bg-blue-600 text-white hover:bg-blue-700 shadow-xs">
                   Go to {user.role === "evaluator" ? "Evaluator Queue" : "Dashboard"}
                 </Button>
               </Link>
@@ -138,13 +138,13 @@ export function Navbar() {
             <div className="flex items-center gap-3">
               <Link
                 href="/auth/sign-in"
-                className="rounded-md px-3.5 py-2 text-sm font-bold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                className="rounded-md px-3.5 py-2 text-sm font-extrabold text-slate-900 hover:text-blue-600 hover:bg-slate-100 transition-colors"
               >
                 Sign In
               </Link>
               <Link
                 href="/auth/sign-up"
-                className="inline-flex items-center justify-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm font-bold text-white shadow-xs hover:bg-primary/90 transition-colors"
+                className="inline-flex items-center justify-center gap-1.5 rounded-md bg-blue-600 px-4 py-2 text-sm font-extrabold text-white shadow-xs hover:bg-blue-700 transition-colors"
               >
                 Get Started <ArrowRight className="h-4 w-4" />
               </Link>
@@ -156,46 +156,46 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="flex h-9 w-9 items-center justify-center rounded-md border border-slate-300 text-slate-800 md:hidden hover:bg-slate-100"
+          className="flex h-9 w-9 items-center justify-center rounded-md border border-slate-300 text-slate-900 md:hidden hover:bg-slate-100"
           aria-label="Toggle navigation menu"
         >
           {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="border-b border-border bg-background px-4 py-6 md:hidden">
-          <nav className="flex flex-col gap-4 text-sm font-bold">
+        <div className="container mx-auto px-4 pb-4 md:hidden border-t border-slate-200 bg-white">
+          <nav className="flex flex-col gap-2 pt-3 text-sm font-extrabold text-slate-900">
             <Link
               href="/assessments"
               onClick={() => setMobileMenuOpen(false)}
-              className="px-2 py-1.5 hover:text-primary transition-colors text-slate-800 dark:text-slate-200"
+              className="px-2 py-1.5 hover:text-blue-600 transition-colors"
             >
               Assessment Catalogue
             </Link>
             <Link
               href="/how-it-works"
               onClick={() => setMobileMenuOpen(false)}
-              className="px-2 py-1.5 hover:text-primary transition-colors text-slate-800 dark:text-slate-200"
+              className="px-2 py-1.5 hover:text-blue-600 transition-colors"
             >
               How It Works
             </Link>
             <Link
               href="/verify/demo"
               onClick={() => setMobileMenuOpen(false)}
-              className="px-2 py-1.5 hover:text-primary transition-colors text-slate-800 dark:text-slate-200"
+              className="px-2 py-1.5 hover:text-blue-600 transition-colors"
             >
               Verify a Credential
             </Link>
 
-            <div className="my-2 border-t border-border pt-4 flex flex-col gap-2">
+            <div className="my-2 border-t border-slate-200 pt-4 flex flex-col gap-2">
               {isClient && user ? (
                 <>
                   <Link
                     href={dashboardHref}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="w-full text-center rounded-md bg-primary py-2 text-sm font-bold text-white"
+                    className="w-full text-center rounded-md bg-blue-600 py-2 text-sm font-extrabold text-white shadow-xs"
                   >
                     Go to {user.role === "evaluator" ? "Evaluator Queue" : "Dashboard"}
                   </Link>
@@ -213,14 +213,14 @@ export function Navbar() {
                   <Link
                     href="/auth/sign-in"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="w-full text-center rounded-md border border-slate-300 py-2 text-sm font-bold hover:bg-slate-100 text-slate-800 dark:text-slate-200 transition-colors"
+                    className="w-full text-center rounded-md border border-slate-300 py-2 text-sm font-extrabold hover:bg-slate-100 text-slate-900 transition-colors"
                   >
                     Sign In
                   </Link>
                   <Link
                     href="/auth/sign-up"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="w-full text-center rounded-md bg-primary py-2 text-sm font-bold text-white hover:bg-primary/90 transition-colors"
+                    className="w-full text-center rounded-md bg-blue-600 py-2 text-sm font-extrabold text-white shadow-xs hover:bg-blue-700 transition-colors"
                   >
                     Get Started
                   </Link>

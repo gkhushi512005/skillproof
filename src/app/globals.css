@@ -1,7 +1,9 @@
 /* Location: src/app/globals.css */
-/* Action: Replace entire file with enhanced contrast tokens */
+/* Enhanced high-contrast styling with explicit light/dark variant isolation */
 
 @import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-border: hsl(var(--border));
@@ -40,8 +42,8 @@
 }
 
 :root {
-  /* Crisp, high-contrast Executive Light Theme */
-  --background: 210 40% 98%;
+  /* Crisp, vibrant, high-contrast Light Theme */
+  --background: 210 40% 99%;
   --foreground: 222 47% 8%;
 
   --card: 0 0% 100%;
@@ -56,9 +58,9 @@
   --secondary: 210 30% 94%;
   --secondary-foreground: 222 47% 11%;
 
-  /* Stronger muted text for improved readability */
+  /* High-contrast readable muted text */
   --muted: 210 25% 93%;
-  --muted-foreground: 215 28% 22%;
+  --muted-foreground: 220 25% 24%;
 
   --accent: 210 30% 94%;
   --accent-foreground: 222 47% 11%;

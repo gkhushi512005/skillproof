@@ -18,16 +18,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="flex min-h-screen flex-col font-sans">
+      <body className="flex min-h-screen flex-col font-sans bg-slate-50/50 text-slate-950">
         <Navbar />
         <main className="flex-1">{children}</main>
-        <footer className="border-t border-border bg-card/50 py-8 text-center text-xs text-muted-foreground">
+        <footer className="border-t-2 border-slate-200 bg-white py-8 text-center text-xs font-bold text-slate-700 shadow-2xs">
           <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 sm:flex-row">
-            <p>© 2026 SkillProof. All rights reserved. Verifiable Skills Infrastructure.</p>
-            <div className="flex gap-6">
-              <span className="hover:text-foreground cursor-pointer">Security Policy</span>
-              <span className="hover:text-foreground cursor-pointer">Verification Protocol</span>
-              <span className="hover:text-foreground cursor-pointer">Privacy Notice</span>
+            <p className="text-slate-900 font-extrabold">© 2026 SkillProof. All rights reserved. Verifiable Skills Infrastructure.</p>
+            <div className="flex gap-6 text-slate-700">
+              <span className="hover:text-blue-600 cursor-pointer font-bold transition-colors">Security Policy</span>
+              <span className="hover:text-blue-600 cursor-pointer font-bold transition-colors">Verification Protocol</span>
+              <span className="hover:text-blue-600 cursor-pointer font-bold transition-colors">Privacy Notice</span>
             </div>
           </div>
         </footer>
