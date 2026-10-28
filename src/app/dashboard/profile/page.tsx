@@ -104,7 +104,7 @@ export default function CandidateProfilePage() {
       {/* Header */}
       <div className="border-b border-border pb-4">
         <h1 className="text-2xl font-black text-foreground tracking-tight">Candidate Profile</h1>
-        <p className="text-sm font-semibold text-slate-700 dark:text-slate-300 mt-1">
+        <p className="text-sm font-semibold text-slate-700 mt-1">
           Manage your verified identity, professional headline, and links shown on your verified credentials.
         </p>
       </div>
@@ -128,7 +128,7 @@ export default function CandidateProfilePage() {
                 <Lock className="h-3.5 w-3.5 text-slate-700" /> Role: {role.toUpperCase()} (Locked)
               </Badge>
             </div>
-            <CardDescription className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+            <CardDescription className="text-xs font-semibold text-slate-700">
               Account roles are enforced strictly on the server and cannot be edited via browser requests.
             </CardDescription>
           </CardHeader>
@@ -139,7 +139,7 @@ export default function CandidateProfilePage() {
               </div>
               <div>
                 <p className="text-base font-black text-foreground">{fullName || "SkillProof User"}</p>
-                <p className="text-xs font-bold text-slate-700 dark:text-slate-300">
+                <p className="text-xs font-bold text-slate-700">
                   ID: {userId ? userId.substring(0, 18) + "..." : "cand_alex_001"}
                 </p>
               </div>
@@ -184,14 +184,14 @@ export default function CandidateProfilePage() {
         <Card className="border-slate-300 dark:border-slate-800">
           <CardHeader>
             <CardTitle className="text-base font-bold">Professional Profiles</CardTitle>
-            <CardDescription className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+            <CardDescription className="text-xs font-semibold text-slate-700">
               Displayed alongside your verified credentials for employers to review your public contributions.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-1.5">
               <label className="text-xs font-bold text-foreground flex items-center gap-1.5">
-                <GithubIcon className="h-4 w-4 text-slate-800 dark:text-slate-200" /> GitHub Profile URL
+                <GithubIcon className="h-4 w-4 text-slate-800" /> GitHub Profile URL
               </label>
               <Input
                 type="url"

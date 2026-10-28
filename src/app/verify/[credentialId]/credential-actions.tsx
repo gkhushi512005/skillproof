@@ -67,7 +67,7 @@ export function CredentialActions({
             </>
           ) : (
             <>
-              <Copy className="mr-1.5 h-3.5 w-3.5 text-slate-600 dark:text-slate-400" /> Copy Shareable Link
+              <Copy className="mr-1.5 h-3.5 w-3.5 text-slate-600" /> Copy Shareable Link
             </>
           )}
         </Button>
@@ -78,7 +78,7 @@ export function CredentialActions({
           size="sm"
           className="text-xs font-bold border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
         >
-          <Printer className="mr-1.5 h-3.5 w-3.5 text-slate-600 dark:text-slate-400" /> Print / Save PDF
+          <Printer className="mr-1.5 h-3.5 w-3.5 text-slate-600" /> Print / Save PDF
         </Button>
 
         <Button
@@ -87,7 +87,7 @@ export function CredentialActions({
           size="sm"
           className="text-xs font-bold border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
         >
-          <Code className="mr-1.5 h-3.5 w-3.5 text-slate-600 dark:text-slate-400" /> Embed Badge
+          <Code className="mr-1.5 h-3.5 w-3.5 text-slate-600" /> Embed Badge
         </Button>
 
         <a
@@ -103,7 +103,7 @@ export function CredentialActions({
       {showEmbed && (
         <div className="rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/60 p-3.5 text-xs space-y-2 mt-1">
           <div className="flex items-center justify-between">
-            <span className="font-bold text-slate-800 dark:text-slate-200">HTML Portfolio Embed Snippet:</span>
+            <span className="font-bold text-slate-800">HTML Portfolio Embed Snippet:</span>
             <Button
               onClick={handleCopyEmbed}
               size="sm"
@@ -113,7 +113,7 @@ export function CredentialActions({
               {embedCopied ? "Copied Snippet!" : "Copy HTML"}
             </Button>
           </div>
-          <pre className="p-2.5 rounded bg-slate-200 dark:bg-slate-950 font-mono text-[11px] text-slate-900 dark:text-slate-200 overflow-x-auto select-all">
+          <pre className="p-2.5 rounded bg-slate-200 dark:bg-slate-950 font-mono text-[11px] text-slate-900 overflow-x-auto select-all">
             {embedCode}
           </pre>
         </div>

@@ -31,7 +31,7 @@ export default async function CandidateDashboardPage() {
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
             Candidate Dashboard
           </h1>
-          <p className="text-sm font-semibold text-slate-700 dark:text-slate-300 mt-1">
+          <p className="text-sm font-semibold text-slate-700 mt-1">
             Track your practical assessment progress, review evaluator feedback, and manage your verified credentials.
           </p>
         </div>
@@ -48,7 +48,7 @@ export default async function CandidateDashboardPage() {
         {/* Verified Passport Card */}
         <Card className="border-slate-300 dark:border-slate-800 shadow-2xs">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-xs font-black uppercase tracking-wider text-slate-700 dark:text-slate-300">
+            <CardTitle className="text-xs font-black uppercase tracking-wider text-slate-700">
               Verified Credentials
             </CardTitle>
             <div className="h-9 w-9 rounded-lg bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 flex items-center justify-center">
@@ -57,7 +57,7 @@ export default async function CandidateDashboardPage() {
           </CardHeader>
           <CardContent>
             <div className="text-3xl font-black text-foreground">{activeCredentials.length}</div>
-            <p className="text-xs font-semibold text-slate-700 dark:text-slate-300 mt-1">Active, employer-verifiable passport</p>
+            <p className="text-xs font-semibold text-slate-700 mt-1">Active, employer-verifiable passport</p>
             <Link
               href="/dashboard/credentials"
               className="mt-3 inline-flex items-center text-xs font-bold text-primary hover:underline"
@@ -70,7 +70,7 @@ export default async function CandidateDashboardPage() {
         {/* In Review Card */}
         <Card className="border-slate-300 dark:border-slate-800 shadow-2xs">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-xs font-black uppercase tracking-wider text-slate-700 dark:text-slate-300">
+            <CardTitle className="text-xs font-black uppercase tracking-wider text-slate-700">
               Under Review
             </CardTitle>
             <div className="h-9 w-9 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-400 flex items-center justify-center">
@@ -79,7 +79,7 @@ export default async function CandidateDashboardPage() {
           </CardHeader>
           <CardContent>
             <div className="text-3xl font-black text-foreground">{inReviewSubmissions.length}</div>
-            <p className="text-xs font-semibold text-slate-700 dark:text-slate-300 mt-1">Pending evaluator rubric grading</p>
+            <p className="text-xs font-semibold text-slate-700 mt-1">Pending evaluator rubric grading</p>
             <Link
               href="/dashboard/submissions"
               className="mt-3 inline-flex items-center text-xs font-bold text-primary hover:underline"
@@ -92,7 +92,7 @@ export default async function CandidateDashboardPage() {
         {/* Action Required Card */}
         <Card className="border-slate-300 dark:border-slate-800 shadow-2xs">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-xs font-black uppercase tracking-wider text-slate-700 dark:text-slate-300">
+            <CardTitle className="text-xs font-black uppercase tracking-wider text-slate-700">
               Action Required
             </CardTitle>
             <div className="h-9 w-9 rounded-lg bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-400 flex items-center justify-center">
@@ -101,7 +101,7 @@ export default async function CandidateDashboardPage() {
           </CardHeader>
           <CardContent>
             <div className="text-3xl font-black text-foreground">{actionRequiredSubmissions.length}</div>
-            <p className="text-xs font-semibold text-slate-700 dark:text-slate-300 mt-1">Revision requested by reviewer</p>
+            <p className="text-xs font-semibold text-slate-700 mt-1">Revision requested by reviewer</p>
             <Link
               href="/dashboard/submissions"
               className="mt-3 inline-flex items-center text-xs font-bold text-amber-700 hover:underline"
@@ -133,11 +133,11 @@ export default async function CandidateDashboardPage() {
               >
                 <div className="space-y-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-black text-slate-700 dark:text-slate-300 uppercase tracking-wide">
+                    <span className="text-xs font-black text-slate-700 uppercase tracking-wide">
                       {submission.assessment.domain}
                     </span>
                     <span className="text-slate-400">·</span>
-                    <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                    <span className="text-xs font-semibold text-slate-700">
                       Submitted {submission.submittedAt ? formatDate(submission.submittedAt) : "Draft"}
                     </span>
                   </div>
@@ -145,7 +145,7 @@ export default async function CandidateDashboardPage() {
                     {submission.assessment.title}
                   </h3>
                   {submission.evaluation?.generalFeedback && (
-                    <p className="text-xs text-slate-700 dark:text-slate-300 line-clamp-1 italic font-medium">
+                    <p className="text-xs text-slate-700 line-clamp-1 italic font-medium">
                       &quot;{submission.evaluation.generalFeedback}&quot;
                     </p>
                   )}

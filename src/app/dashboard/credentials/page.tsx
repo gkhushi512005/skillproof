@@ -50,7 +50,7 @@ export default function CandidateCredentialsPage() {
           <span>Portable Skills Passport</span>
         </div>
         <h1 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight">Verified Credentials</h1>
-        <p className="text-sm font-semibold text-slate-700 dark:text-slate-300 mt-1">
+        <p className="text-sm font-semibold text-slate-700 mt-1">
           Cryptographically issued credentials backed by authorized human rubric evaluations. Share these links directly with employers.
         </p>
       </div>
@@ -90,7 +90,7 @@ export default function CandidateCredentialsPage() {
                   {credential.assessmentTitle}
                 </CardTitle>
 
-                <div className="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-slate-200 pt-1">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-slate-800 pt-1">
                   <ShieldCheck className="h-4 w-4 text-emerald-600" />
                   <span>Verified Recipient: <strong className="text-foreground font-black">{credential.candidateName}</strong></span>
                 </div>
@@ -99,23 +99,23 @@ export default function CandidateCredentialsPage() {
               <CardContent className="space-y-4 pt-1">
                 {/* Meta details */}
                 <div className="rounded-lg bg-slate-50 dark:bg-slate-900/60 p-3.5 text-xs space-y-2 border border-slate-200 dark:border-slate-800">
-                  <div className="flex items-center justify-between text-slate-700 dark:text-slate-300 font-semibold">
+                  <div className="flex items-center justify-between text-slate-700 font-semibold">
                     <span className="flex items-center gap-1.5">
                       <Calendar className="h-4 w-4 text-primary" /> Issued Date:
                     </span>
                     <span className="font-bold text-foreground">{formatDate(credential.issuedAt)}</span>
                   </div>
                   {credential.expiresAt && (
-                    <div className="flex items-center justify-between text-slate-700 dark:text-slate-300 font-semibold">
+                    <div className="flex items-center justify-between text-slate-700 font-semibold">
                       <span className="flex items-center gap-1.5">
                         <Calendar className="h-4 w-4 text-primary" /> Valid Until:
                       </span>
                       <span className="font-bold text-foreground">{formatDate(credential.expiresAt)}</span>
                     </div>
                   )}
-                  <div className="flex items-center justify-between text-slate-700 dark:text-slate-300 pt-2 border-t border-slate-200 dark:border-slate-800">
+                  <div className="flex items-center justify-between text-slate-700 pt-2 border-t border-slate-200 dark:border-slate-800">
                     <span className="font-bold">Credential ID:</span>
-                    <span className="font-mono text-xs font-black text-slate-900 dark:text-slate-100 truncate max-w-[170px] bg-slate-200 dark:bg-slate-800 px-2 py-0.5 rounded">
+                    <span className="font-mono text-xs font-black text-slate-900 truncate max-w-[170px] bg-slate-200 dark:bg-slate-800 px-2 py-0.5 rounded">
                       {credential.id}
                     </span>
                   </div>
@@ -127,7 +127,7 @@ export default function CandidateCredentialsPage() {
                   variant="outline"
                   size="sm"
                   onClick={() => handleCopyLink(credential.id)}
-                  className="text-xs font-bold gap-1.5 border-slate-300 text-slate-800 dark:text-slate-200"
+                  className="text-xs font-bold gap-1.5 border-slate-300 text-slate-800"
                 >
                   {copiedId === credential.id ? (
                     <>

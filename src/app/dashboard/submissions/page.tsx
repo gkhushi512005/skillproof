@@ -47,7 +47,7 @@ export default function SubmissionsHistoryPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-4">
         <div>
           <h1 className="text-2xl font-extrabold text-foreground tracking-tight">Submission History & Feedback</h1>
-          <p className="text-sm text-slate-700 dark:text-slate-300 mt-1">
+          <p className="text-sm text-slate-700 mt-1">
             Review detailed evaluator notes, criterion-level scoring breakdowns, and revision requests.
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function SubmissionsHistoryPage() {
               className={`capitalize px-3 py-1.5 rounded-md font-semibold transition-colors ${
                 filter === statusKey
                   ? "bg-primary text-white shadow-xs"
-                  : "text-slate-700 dark:text-slate-300 hover:text-foreground hover:bg-slate-200/60"
+                  : "text-slate-700 hover:text-foreground hover:bg-slate-200/60"
               }`}
             >
               {statusKey.replace("_", " ")}
@@ -83,11 +83,11 @@ export default function SubmissionsHistoryPage() {
               >
                 <div className="space-y-1.5">
                   <div className="flex items-center gap-2">
-                    <Badge variant="outline" className="text-xs font-bold text-slate-800 dark:text-slate-200">
+                    <Badge variant="outline" className="text-xs font-bold text-slate-800">
                       {submission.assessment.domain}
                     </Badge>
                     <span className="text-slate-400 text-xs">·</span>
-                    <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                    <span className="text-xs font-semibold text-slate-700">
                       Submitted on {submission.submittedAt ? formatDate(submission.submittedAt) : "N/A"}
                     </span>
                   </div>
@@ -109,7 +109,7 @@ export default function SubmissionsHistoryPage() {
                 <div className="border-t border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/30 p-6 space-y-6">
                   {/* Candidate Evidence Submitted */}
                   <div className="space-y-3">
-                    <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-800 dark:text-slate-200">
+                    <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-800">
                       Candidate Evidence Submitted
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -120,7 +120,7 @@ export default function SubmissionsHistoryPage() {
                           rel="noreferrer"
                           className="flex items-center justify-between p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-card hover:border-primary transition-colors text-xs"
                         >
-                          <span className="flex items-center gap-2 truncate text-slate-900 dark:text-slate-100 font-semibold">
+                          <span className="flex items-center gap-2 truncate text-slate-900 font-semibold">
                             <GitBranch className="h-4 w-4 text-primary shrink-0" />
                             {submission.repoUrl}
                           </span>
@@ -135,7 +135,7 @@ export default function SubmissionsHistoryPage() {
                           rel="noreferrer"
                           className="flex items-center justify-between p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-card hover:border-primary transition-colors text-xs"
                         >
-                          <span className="flex items-center gap-2 truncate text-slate-900 dark:text-slate-100 font-semibold">
+                          <span className="flex items-center gap-2 truncate text-slate-900 font-semibold">
                             <Globe className="h-4 w-4 text-primary shrink-0" />
                             {submission.liveUrl}
                           </span>
@@ -146,8 +146,8 @@ export default function SubmissionsHistoryPage() {
 
                     {submission.notesText && (
                       <div className="rounded-lg border border-slate-300 dark:border-slate-700 bg-card p-4 text-xs space-y-1">
-                        <span className="font-bold text-slate-900 dark:text-slate-100 text-xs">Candidate Notes:</span>
-                        <p className="text-slate-800 dark:text-slate-200 font-medium leading-relaxed mt-0.5">
+                        <span className="font-bold text-slate-900 text-xs">Candidate Notes:</span>
+                        <p className="text-slate-800 font-medium leading-relaxed mt-0.5">
                           {submission.notesText}
                         </p>
                       </div>
@@ -165,13 +165,13 @@ export default function SubmissionsHistoryPage() {
                               Official Evaluation Decision
                             </h4>
                           </div>
-                          <p className="text-xs font-medium text-slate-700 dark:text-slate-300 mt-0.5">
-                            Evaluated by <strong className="text-slate-900 dark:text-slate-100">{submission.evaluation.evaluatorName}</strong> on {formatDate(submission.evaluation.evaluatedAt)}
+                          <p className="text-xs font-medium text-slate-700 mt-0.5">
+                            Evaluated by <strong className="text-slate-900">{submission.evaluation.evaluatorName}</strong> on {formatDate(submission.evaluation.evaluatedAt)}
                           </p>
                         </div>
 
                         <div className="flex items-center gap-2 bg-card border border-slate-300 dark:border-slate-700 px-3 py-1.5 rounded-lg">
-                          <span className="text-xs font-bold text-slate-700 dark:text-slate-300">Rubric Score:</span>
+                          <span className="text-xs font-bold text-slate-700">Rubric Score:</span>
                           <Badge
                             variant={submission.evaluation.totalScore >= 75 ? "success" : "warning"}
                             className="text-xs font-black px-2 py-0.5"
@@ -185,8 +185,8 @@ export default function SubmissionsHistoryPage() {
                       <div
                         className={`rounded-xl p-4.5 border-2 shadow-xs ${
                           submission.status === "changes_requested"
-                            ? "border-amber-300 bg-amber-50/90 dark:bg-amber-950/40 text-slate-900 dark:text-slate-100"
-                            : "border-emerald-300 bg-emerald-50/90 dark:bg-emerald-950/40 text-slate-900 dark:text-slate-100"
+                            ? "border-amber-300 bg-amber-50/90 dark:bg-amber-950/40 text-slate-900"
+                            : "border-emerald-300 bg-emerald-50/90 dark:bg-emerald-950/40 text-slate-900"
                         }`}
                       >
                         <div className="flex items-center gap-2 mb-1.5">
@@ -201,14 +201,14 @@ export default function SubmissionsHistoryPage() {
                             Reviewer Feedback:
                           </span>
                         </div>
-                        <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 leading-relaxed pl-6">
+                        <p className="text-sm font-semibold text-slate-900 leading-relaxed pl-6">
                           {submission.evaluation.generalFeedback}
                         </p>
                       </div>
 
                       {/* Criteria Score Breakdown */}
                       <div className="space-y-2.5">
-                        <span className="text-xs font-extrabold text-slate-900 dark:text-slate-100 uppercase tracking-wider">
+                        <span className="text-xs font-extrabold text-slate-900 uppercase tracking-wider">
                           Criteria Breakdown:
                         </span>
                         <div className="grid grid-cols-1 gap-2.5">
@@ -222,16 +222,16 @@ export default function SubmissionsHistoryPage() {
                                 className="rounded-lg border border-slate-300 dark:border-slate-700 bg-card p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs"
                               >
                                 <div className="space-y-1">
-                                  <p className="font-bold text-slate-900 dark:text-slate-100 text-sm">
+                                  <p className="font-bold text-slate-900 text-sm">
                                     {rubricItem?.title || score.criterionId}
                                   </p>
                                   {score.comments && (
-                                    <p className="text-slate-700 dark:text-slate-300 text-xs font-medium italic">
+                                    <p className="text-slate-700 text-xs font-medium italic">
                                       &quot;{score.comments}&quot;
                                     </p>
                                   )}
                                 </div>
-                                <div className="font-black text-slate-900 dark:text-slate-100 text-sm shrink-0 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-md text-right">
+                                <div className="font-black text-slate-900 text-sm shrink-0 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-md text-right">
                                   {score.pointsAwarded} / {rubricItem?.maxPoints || 5} pts
                                 </div>
                               </div>
@@ -259,7 +259,7 @@ export default function SubmissionsHistoryPage() {
                       </div>
                     </div>
                   ) : (
-                    <div className="rounded-lg border border-dashed border-slate-300 dark:border-slate-700 p-4 text-center text-xs font-medium text-slate-700 dark:text-slate-300">
+                    <div className="rounded-lg border border-dashed border-slate-300 dark:border-slate-700 p-4 text-center text-xs font-medium text-slate-700">
                       Your submission is currently in the queue. An authorized evaluator will review your evidence shortly.
                     </div>
                   )}

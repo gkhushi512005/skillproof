@@ -14,7 +14,7 @@ const DOMAIN_IMAGES: Record<string, string> = {
   "Web Development": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
   "Data Engineering": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80",
   "Cloud & DevOps": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80",
-  "Product Design": "https://images.unsplash.com/photo-1581291518655-9523c932dede?auto=format&fit=crop&w=600&q=80",
+  "Product Design": "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=600&q=80",
 };
 
 export default function AssessmentCataloguePage() {
@@ -205,6 +205,10 @@ export default function AssessmentCataloguePage() {
                     src={bannerImg}
                     alt={assessment.title}
                     className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src =
+                        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80";
+                    }}
                   />
                   <div className="absolute top-3 left-3">
                     <Badge className="font-black text-xs bg-slate-950/85 backdrop-blur text-white border border-white/20 px-3 py-1">

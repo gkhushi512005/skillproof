@@ -59,7 +59,7 @@ export default function SignUpPage() {
             <ShieldCheck className="h-7 w-7" />
           </div>
           <CardTitle className="text-2xl font-black tracking-tight text-foreground">Create your SkillProof Account</CardTitle>
-          <CardDescription className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+          <CardDescription className="text-xs font-semibold text-slate-700">
             Join the verified skills network and build tamper-evident trust.
           </CardDescription>
         </CardHeader>
@@ -156,7 +156,7 @@ export default function SignUpPage() {
           </form>
         </CardContent>
 
-        <CardFooter className="justify-center border-t border-slate-200 dark:border-slate-800 py-4 text-xs font-medium text-slate-700 dark:text-slate-300">
+        <CardFooter className="justify-center border-t border-slate-200 dark:border-slate-800 py-4 text-xs font-medium text-slate-700">
           Already have an account?{" "}
           <Link href="/auth/sign-in" className="text-primary font-bold hover:underline ml-1">
             Sign in

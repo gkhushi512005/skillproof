@@ -37,13 +37,13 @@ export default async function EvaluatorQueuePage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">Assigned Evaluation Queue</h1>
-          <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mt-1">
+          <p className="text-sm font-medium text-slate-700 mt-1">
             Review submitted candidate evidence against standardized assessment rubrics.
           </p>
         </div>
 
         <div className="flex items-center gap-2">
-          <Badge variant="outline" className="text-xs font-bold border-slate-300 text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-slate-800">
+          <Badge variant="outline" className="text-xs font-bold border-slate-300 text-slate-900 bg-slate-100 dark:bg-slate-800">
             {pendingQueue.length} Submissions in Queue
           </Badge>
         </div>
@@ -53,47 +53,47 @@ export default async function EvaluatorQueuePage() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
         <Card className="border-slate-300 dark:border-slate-800 shadow-2xs">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-xs font-extrabold uppercase tracking-wide text-slate-700 dark:text-slate-300">
+            <CardTitle className="text-xs font-extrabold uppercase tracking-wide text-slate-700">
               Needs Evaluation
             </CardTitle>
             <Clock className="h-5 w-5 text-amber-600" />
           </CardHeader>
           <CardContent>
             <div className="text-3xl font-black text-foreground">{needsEvaluationCount}</div>
-            <p className="text-xs font-semibold text-slate-700 dark:text-slate-300 mt-1">Awaiting your rubric review</p>
+            <p className="text-xs font-semibold text-slate-700 mt-1">Awaiting your rubric review</p>
           </CardContent>
         </Card>
 
         <Card className="border-slate-300 dark:border-slate-800 shadow-2xs">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-xs font-extrabold uppercase tracking-wide text-slate-700 dark:text-slate-300">
+            <CardTitle className="text-xs font-extrabold uppercase tracking-wide text-slate-700">
               Under Revision
             </CardTitle>
             <AlertTriangle className="h-5 w-5 text-amber-600" />
           </CardHeader>
           <CardContent>
             <div className="text-3xl font-black text-foreground">{underRevisionCount}</div>
-            <p className="text-xs font-semibold text-slate-700 dark:text-slate-300 mt-1">Changes requested from candidate</p>
+            <p className="text-xs font-semibold text-slate-700 mt-1">Changes requested from candidate</p>
           </CardContent>
         </Card>
 
         <Card className="border-slate-300 dark:border-slate-800 shadow-2xs">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-xs font-extrabold uppercase tracking-wide text-slate-700 dark:text-slate-300">
+            <CardTitle className="text-xs font-extrabold uppercase tracking-wide text-slate-700">
               Completed Reviews
             </CardTitle>
             <CheckCircle2 className="h-5 w-5 text-emerald-600" />
           </CardHeader>
           <CardContent>
             <div className="text-3xl font-black text-foreground">{completedCount > 0 ? completedCount : 14}</div>
-            <p className="text-xs font-semibold text-slate-700 dark:text-slate-300 mt-1">Passed with verified credentials</p>
+            <p className="text-xs font-semibold text-slate-700 mt-1">Passed with verified credentials</p>
           </CardContent>
         </Card>
       </div>
 
       {/* Review Queue Cards */}
       <div className="space-y-4">
-        <h2 className="text-base font-extrabold text-slate-900 dark:text-slate-100 uppercase tracking-wide">
+        <h2 className="text-base font-extrabold text-slate-900 uppercase tracking-wide">
           Submissions Awaiting Action
         </h2>
 
@@ -110,7 +110,7 @@ export default async function EvaluatorQueuePage() {
                       {submission.assessment.difficulty}
                     </Badge>
                     <span className="text-slate-400 text-xs">·</span>
-                    <span className="text-xs font-bold text-slate-700 dark:text-slate-300">
+                    <span className="text-xs font-bold text-slate-700">
                       Submitted on {submission.submittedAt ? formatDate(submission.submittedAt) : "Recently"}
                     </span>
                   </div>
@@ -119,7 +119,7 @@ export default async function EvaluatorQueuePage() {
                     {submission.assessment.title}
                   </h3>
 
-                  <div className="flex flex-wrap items-center gap-3 text-xs font-semibold text-slate-800 dark:text-slate-200">
+                  <div className="flex flex-wrap items-center gap-3 text-xs font-semibold text-slate-800">
                     <div className="flex items-center gap-1.5">
                       <User className="h-4 w-4 text-primary shrink-0" />
                       <span>Candidate: <strong className="text-foreground font-black">{submission.candidateName}</strong></span>

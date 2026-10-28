@@ -88,10 +88,10 @@ export default function CandidateDashboardLayout({
                 className={`flex items-center gap-3 rounded-lg px-3.5 py-2.5 text-sm font-bold transition-colors ${
                   isActive
                     ? "bg-primary text-white shadow-xs"
-                    : "text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-foreground"
+                    : "text-slate-800 hover:bg-slate-100 hover:text-slate-950"
                 }`}
               >
-                <Icon className={`h-4.5 w-4.5 shrink-0 ${isActive ? "text-white" : "text-slate-600 dark:text-slate-400"}`} />
+                <Icon className={`h-4.5 w-4.5 shrink-0 ${isActive ? "text-white" : "text-slate-600"}`} />
                 <span>{item.name}</span>
               </Link>
             );
@@ -99,12 +99,12 @@ export default function CandidateDashboardLayout({
         </nav>
 
         {/* Role-Aware Shortcuts & Sign Out */}
-        <div className="border-t border-slate-200 dark:border-slate-800 pt-4 mt-auto space-y-2">
+        <div className="border-t border-slate-200 pt-4 mt-auto space-y-2">
           {/* Only display Evaluator shortcut if user has evaluator permissions */}
           {isEvaluator && (
             <Link
               href="/evaluator"
-              className="flex items-center justify-between text-xs font-bold text-indigo-950 dark:text-indigo-200 bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-300 dark:border-indigo-800 rounded-lg p-3 hover:bg-indigo-100 transition-colors shadow-2xs"
+              className="flex items-center justify-between text-xs font-bold text-indigo-950 bg-indigo-50 border border-indigo-300 rounded-lg p-3 hover:bg-indigo-100 transition-colors shadow-2xs"
             >
               <span>Evaluator Workspace</span>
               <ExternalLink className="h-4 w-4" />
@@ -134,7 +134,7 @@ export default function CandidateDashboardLayout({
                 key={item.name}
                 href={item.href}
                 className={`whitespace-nowrap px-3 py-1.5 rounded-md text-xs font-bold ${
-                  isActive ? "bg-primary text-white" : "text-slate-800 dark:text-slate-200 hover:bg-slate-100"
+                  isActive ? "bg-primary text-white" : "text-slate-800 hover:bg-slate-100"
                 }`}
               >
                 {item.name}

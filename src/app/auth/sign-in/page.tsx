@@ -47,7 +47,7 @@ export default function SignInPage() {
             <ShieldCheck className="h-7 w-7" />
           </div>
           <CardTitle className="text-2xl font-black tracking-tight text-foreground">Sign in to SkillProof</CardTitle>
-          <CardDescription className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+          <CardDescription className="text-xs font-semibold text-slate-700">
             Access your skills passport, submit evidence, or conduct rubric reviews.
           </CardDescription>
         </CardHeader>
@@ -97,13 +97,13 @@ export default function SignInPage() {
 
           {/* Development Quick-Fill Helper */}
           <div className="pt-3 border-t border-slate-200 dark:border-slate-800 text-center">
-            <p className="text-[11px] font-semibold text-slate-600 dark:text-slate-400">
+            <p className="text-[11px] font-semibold text-slate-600">
               Need a test account? Register as a <strong>Candidate</strong> or <strong>Evaluator</strong> in seconds.
             </p>
           </div>
         </CardContent>
 
-        <CardFooter className="justify-center border-t border-slate-200 dark:border-slate-800 py-4 text-xs font-medium text-slate-700 dark:text-slate-300">
+        <CardFooter className="justify-center border-t border-slate-200 dark:border-slate-800 py-4 text-xs font-medium text-slate-700">
           Don&apos;t have an account yet?{" "}
           <Link href="/auth/sign-up" className="text-primary font-bold hover:underline ml-1">
             Create an Account

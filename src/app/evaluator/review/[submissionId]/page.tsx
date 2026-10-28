@@ -113,7 +113,7 @@ export default function EvaluatorReviewPage({ params }: ReviewPageProps) {
         <div>
           <Link
             href="/evaluator"
-            className="inline-flex items-center text-xs font-bold text-slate-700 dark:text-slate-300 hover:text-foreground mb-1.5 transition-colors"
+            className="inline-flex items-center text-xs font-bold text-slate-700 hover:text-foreground mb-1.5 transition-colors"
           >
             <ArrowLeft className="mr-1.5 h-4 w-4" /> Back to Evaluator Queue
           </Link>
@@ -126,7 +126,7 @@ export default function EvaluatorReviewPage({ params }: ReviewPageProps) {
         </div>
 
         <div className="flex items-center gap-3">
-          <span className="text-xs font-bold text-slate-700 dark:text-slate-300">Status:</span>
+          <span className="text-xs font-bold text-slate-700">Status:</span>
           <StatusBadge status={submission.status} />
         </div>
       </div>
@@ -205,7 +205,7 @@ export default function EvaluatorReviewPage({ params }: ReviewPageProps) {
           {/* Candidate Card */}
           <Card className="border-slate-300 dark:border-slate-800">
             <CardHeader className="pb-3">
-              <CardTitle className="text-xs font-black uppercase tracking-wider text-slate-700 dark:text-slate-300">
+              <CardTitle className="text-xs font-black uppercase tracking-wider text-slate-700">
                 Candidate Information
               </CardTitle>
             </CardHeader>
@@ -225,11 +225,11 @@ export default function EvaluatorReviewPage({ params }: ReviewPageProps) {
                 </div>
                 <div>
                   <p className="text-base font-black text-foreground">{MOCK_CANDIDATE.fullName}</p>
-                  <p className="text-xs font-medium text-slate-700 dark:text-slate-300 line-clamp-1">{MOCK_CANDIDATE.headline}</p>
+                  <p className="text-xs font-medium text-slate-700 line-clamp-1">{MOCK_CANDIDATE.headline}</p>
                 </div>
               </div>
 
-              <div className="pt-2 border-t border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-300 space-y-1">
+              <div className="pt-2 border-t border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-700 space-y-1">
                 <p>Target Challenge: <strong className="text-foreground font-black">{assessment.title}</strong></p>
                 <p>Submitted: {submission.submittedAt ? formatDate(submission.submittedAt) : "Recently"}</p>
               </div>
@@ -246,7 +246,7 @@ export default function EvaluatorReviewPage({ params }: ReviewPageProps) {
             <CardContent className="space-y-3">
               {submission.repoUrl && (
                 <div className="rounded-lg border border-slate-300 dark:border-slate-700 p-3 space-y-1 bg-card">
-                  <span className="text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase">
+                  <span className="text-[11px] font-bold text-slate-700 uppercase">
                     Source Code Repository
                   </span>
                   <a
@@ -263,7 +263,7 @@ export default function EvaluatorReviewPage({ params }: ReviewPageProps) {
 
               {submission.liveUrl && (
                 <div className="rounded-lg border border-slate-300 dark:border-slate-700 p-3 space-y-1 bg-card">
-                  <span className="text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase">
+                  <span className="text-[11px] font-bold text-slate-700 uppercase">
                     Live Deployed Application
                   </span>
                   <a
@@ -303,7 +303,7 @@ export default function EvaluatorReviewPage({ params }: ReviewPageProps) {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="rounded-lg bg-slate-50 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-700 p-3 text-xs text-slate-800 dark:text-slate-200 font-medium leading-relaxed">
+                <div className="rounded-lg bg-slate-50 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-700 p-3 text-xs text-slate-800 font-medium leading-relaxed">
                   {submission.notesText}
                 </div>
               </CardContent>
@@ -322,7 +322,7 @@ export default function EvaluatorReviewPage({ params }: ReviewPageProps) {
                 </p>
                 <div className="flex items-baseline gap-2 mt-0.5">
                   <span className="text-3xl font-black text-foreground">{totalScore}%</span>
-                  <span className="text-xs font-bold text-slate-700 dark:text-slate-300">
+                  <span className="text-xs font-bold text-slate-700">
                     (Minimum required to pass: 75%)
                   </span>
                 </div>
@@ -343,7 +343,7 @@ export default function EvaluatorReviewPage({ params }: ReviewPageProps) {
           <Card className="border-slate-300 dark:border-slate-800">
             <CardHeader className="pb-3">
               <CardTitle className="text-base font-bold">Standardized Rubric Criteria</CardTitle>
-              <CardDescription className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+              <CardDescription className="text-xs font-semibold text-slate-700">
                 Score each criterion objectively from 1 to 5 points.
               </CardDescription>
             </CardHeader>
@@ -355,7 +355,7 @@ export default function EvaluatorReviewPage({ params }: ReviewPageProps) {
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <h4 className="text-sm font-bold text-foreground">{criterion.title}</h4>
-                        <p className="text-xs font-medium text-slate-700 dark:text-slate-300 mt-0.5">{criterion.description}</p>
+                        <p className="text-xs font-medium text-slate-700 mt-0.5">{criterion.description}</p>
                       </div>
                       <div className="text-right shrink-0">
                         <Badge variant="outline" className="text-[11px] font-bold border-slate-300 text-slate-900">
@@ -377,7 +377,7 @@ export default function EvaluatorReviewPage({ params }: ReviewPageProps) {
                           className={`flex-1 py-1.5 rounded-md text-xs font-black transition-all ${
                             currentScore === pt
                               ? "bg-primary text-white shadow-xs scale-102"
-                              : "bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 hover:bg-slate-200"
+                              : "bg-slate-100 dark:bg-slate-800 text-slate-800 border border-slate-300 dark:border-slate-700 hover:bg-slate-200"
                           }`}
                         >
                           {pt} pt{pt > 1 ? "s" : ""}
@@ -408,7 +408,7 @@ export default function EvaluatorReviewPage({ params }: ReviewPageProps) {
           <Card className="border-slate-300 dark:border-slate-800">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-bold">Constructive Evaluator Feedback</CardTitle>
-              <CardDescription className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+              <CardDescription className="text-xs font-semibold text-slate-700">
                 This feedback is visible to the candidate to guide their career growth or revision.
               </CardDescription>
             </CardHeader>
