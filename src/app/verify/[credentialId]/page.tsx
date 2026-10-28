@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { formatDate } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/server";
+import { CredentialActions } from "./credential-actions";
 import {
   ShieldCheck,
   ShieldAlert,
@@ -17,12 +18,7 @@ import {
   ArrowLeft,
 } from "lucide-react";
 
-export function generateStaticParams() {
-  return [
-    ...MOCK_CREDENTIALS.map((c) => ({ credentialId: c.id })),
-    { credentialId: "demo" },
-  ];
-}
+export const dynamic = "force-dynamic";
 
 interface VerifyPageProps {
   params: Promise<{ credentialId: string }>;
@@ -115,20 +111,27 @@ export default async function CredentialVerificationPage({ params }: VerifyPageP
   return (
     <div className="container mx-auto px-4 py-12 max-w-4xl">
       {/* Recruiter Navigation Bar */}
-      <div className="flex items-center justify-between gap-4 mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <Link
           href="/"
           className="inline-flex items-center text-xs font-bold text-slate-700 hover:text-foreground transition-colors"
         >
           <ArrowLeft className="mr-1.5 h-4 w-4" /> Back to SkillProof Home
         </Link>
-        <span className="text-xs font-mono font-bold text-slate-700 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-300">
-          Lookup: {credential.id}
-        </span>
+        <div className="flex flex-wrap items-center gap-2.5">
+          <CredentialActions
+            credentialId={credential.id}
+            candidateName={credential.candidateName}
+            assessmentTitle={credential.assessmentTitle}
+          />
+          <span className="text-xs font-mono font-bold text-slate-700 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-300">
+            Lookup: {credential.id}
+          </span>
+        </div>
       </div>
 
       {/* Main Verification Certificate Card */}
-      <Card className="overflow-hidden border-2 border-slate-300 dark:border-slate-800 shadow-md bg-card">
+      <Card className="overflow-hidden border-2 border-slate-300 dark:border-slate-800 shadow-md bg-card print:border-none print:shadow-none">
         {/* Verification Status Header Banner */}
         <div
           className={`p-6 border-b text-center flex flex-col items-center justify-center ${
@@ -254,7 +257,7 @@ export default async function CredentialVerificationPage({ params }: VerifyPageP
           </div>
         </CardContent>
 
-        <CardFooter className="bg-slate-100 dark:bg-slate-900 border-t border-slate-300 dark:border-slate-800 p-4 flex flex-wrap items-center justify-between gap-3 text-xs font-semibold text-slate-700 dark:text-slate-300">
+        <CardFooter className="bg-slate-100 dark:bg-slate-900 border-t border-slate-300 dark:border-slate-800 p-4 flex flex-wrap items-center justify-between gap-3 text-xs font-semibold text-slate-700 dark:text-slate-300 print:hidden">
           <span>SkillProof Verification Network · Dynamic State Protocol</span>
           <div className="flex items-center gap-2">
             <Link href={`/assessments/${assessment.slug}`}>

@@ -13,6 +13,8 @@ import {
   PlusCircle,
 } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default async function CandidateDashboardPage() {
   const credentials = await getCandidateCredentialsData();
   const submissions = await getCandidateSubmissionsData();
